@@ -281,7 +281,7 @@ class Game < ActiveRecord::Base
   end
 
   def enough_players?
-    return false if players.empty?
+    return false if players.size != 4
 
     self.players.each do |player|
       return false unless player.ready?
